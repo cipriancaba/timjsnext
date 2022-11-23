@@ -9,16 +9,17 @@ const CatsPage = async ({ children }) => {
     <div className="flex">
       <div className="flex flex-col gap-4">
         {cats.map((cat) => (
-          <div key={cat.id}>
-            <Link href={`/cats/${cat.id}`}>
+          <Link href={`/cats/${cat.id}`} key={cat.id}>
+            <div key={cat.id} className="h-20 w-20 relative">
               <Image
                 src={`https://cataas.com/cat/${cat.id}`}
                 alt={"cat"}
-                width={50}
-                height={50}
+                fill={true}
+                className="object-cover"
+                sizes="10vw"
               />
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
       <div className="flex-1 flex items-center justify-center h-full w-full">
